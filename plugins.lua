@@ -76,6 +76,27 @@ local plugins = {
       table.insert(M.sources, {name = "crates"})
       return M
     end,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require "custom.configs.treesitter"
+    end
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+                                          -- Configuration here, or leave empty to use defaults
+        })
+     end
   }
+
+
+
 }
 return plugins
